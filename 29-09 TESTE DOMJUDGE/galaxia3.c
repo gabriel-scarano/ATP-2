@@ -25,11 +25,7 @@ int main ()
 
     for (i = 0; i < N; i++)
     {
-        scanf("%s %lf %lf %lf %lf", planetas[i].nome, &planetas[i].peso, &planetas[i].x, &planetas[i].y, &planetas[i].z);   
-        planetas[i].x = floor(planetas[i].x * 100)/100;
-        planetas[i].y = floor(planetas[i].y * 100)/100;
-        planetas[i].z = floor(planetas[i].z * 100)/100;
-        planetas[i].peso = floor(planetas[i].peso * 100)/100;
+        scanf("%s %lf %lf %lf %lf", planetas[i].nome, &planetas[i].peso, &planetas[i].x, &planetas[i].y, &planetas[i].z);
     }
 
     for (i = 0; i < M; i++)
@@ -68,7 +64,7 @@ void op1 (Planeta *planetas, int N)
     ind1 = retorna_indice(planetas, nome1, N);
     ind2 = retorna_indice(planetas, nome2, N);
 
-    res = floor(((planetas[ind1].x - planetas[ind2].x) * (planetas[ind1].x - planetas[ind2].x) + (planetas[ind1].y - planetas[ind2].y) * (planetas[ind1].y - planetas[ind2].y) + (planetas[ind1].z - planetas[ind2].z) * (planetas[ind1].z - planetas[ind2].z)) * 100)/100;
+    res = ((planetas[ind1].x - planetas[ind2].x) * (planetas[ind1].x - planetas[ind2].x) + (planetas[ind1].y - planetas[ind2].y) * (planetas[ind1].y - planetas[ind2].y) + (planetas[ind1].z - planetas[ind2].z) * (planetas[ind1].z - planetas[ind2].z));
     dist = pow(res, 0.5);
     
     printf("%.2lf", dist);
